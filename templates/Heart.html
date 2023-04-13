@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Heart.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/stethoscope.png" type="image/x-icon">
+    <title>Heart Disease</title>
+    <style>
+      * {
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif, Arial, Helvetica;
+        /* background-color: rgba(231, 192, 192, 0.5); */
+      }
+
+      /* navigation bar....................................... */
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 3px 20px 2px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.4s, -webkit-box-shadow 0.8s;
+        /* width: 100vw; */
+      }
+
+      .backgr {
+        /* background-color: rgb(0, 0, 0); */
+        background: linear-gradient(to right, #000428, #004e92);
+        color: rgb(255, 255, 255);
+      }
+
+      #navbarNavAltMarkup {
+        justify-content: flex-end;
+      }
+
+      .navbar-brand {
+        color: rgb(255, 255, 255) !important;
+      }
+
+      #backg {
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        font-size: 16px;
+        padding: 5px 20px;
+        margin: 5px 7px;
+        border-radius: 25px;
+        border-width: 5px;
+      }
+
+      #backg:hover {
+        background-color: rgb(42, 88, 139);
+        color: rgb(255, 255, 255);
+      }
+
+      .navlogo {
+        width: 30px;
+        filter: invert(100%);
+        margin: auto 10px;
+      }
+
+      /* Main Area........................... */
+      .contain {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 10px;
+        margin: 20px auto;
+        width: 90%;
+        border-radius: 15px;
+        background-color: white;
+      }
+      .left {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        min-height: 565px;
+        margin: auto;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        padding: 10px;
+      }
+      .left .imag {
+        font-size: 25px;
+        margin: 10px auto;
+        color: white;
+        font-weight: 600;
+      }
+      .left .descript {
+        margin: 15px auto;
+        color: white;
+        font-weight: 400;
+      }
+      li ol {
+        list-style: lower-roman;
+      }
+
+      .right {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: white;
+      }
+      .container {
+        width: 100%;
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+      }
+      .container .title {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+      }
+      .container .title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 100px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      }
+      .content form .user-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 0 12px 0;
+      }
+      form .user-details .input-box {
+        margin-bottom: 15px;
+        width: calc(100% / 2 - 20px);
+      }
+      form .input-box span.details {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+      .user-details .input-box input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border: 0.5px solid #ccc;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      .user-details .input-box input:focus,
+      .user-details .input-box input:valid {
+        border-color: #9b59b6;
+      }
+      form .button {
+        height: 45px;
+        margin: 35px 0;
+      }
+      form .button input {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      }
+      form .button input:hover {
+        /* transform: scale(0.99); */
+        background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+      }
+      @media (max-width: 584px) {
+        .container {
+          max-width: 100%;
+        }
+        form .user-details .input-box {
+          margin-bottom: 15px;
+          width: 100%;
+        }
+        .content form .user-details {
+          /* max-height: 300px; */
+          overflow-y: scroll;
+        }
+        .user-details::-webkit-scrollbar {
+          width: 5px;
+        }
+      }
+      @media (max-width: 459px) {
+        .container .content .category {
+          flex-direction: column;
+        }
+      }
+
+      .result {
+        height: 50px;
+        margin: 5px 0;
+        padding: 4px;
+        width: 100%;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        border-radius: 5px;
+      }
+
+      .result p {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        background-color: #fff;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        padding-top: 8px;
+        color: rgb(13, 116, 76);
+      }
+
+      @media only screen and (max-width: 768px) {
+        .contain {
+          flex-direction: column;
+        }
+        .left {
+          width: 99.5%;
+          min-height: auto;
+          padding-top: 20px;
+        }
+        .right {
+          width: 99%;
+        }
+      }
+
+      /* ........................ Footer Area ......................... */
+
+      footer {
+        position: relative;
+        bottom: 0px;
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        height: auto;
+        /* width: 100vw; */
+        padding-top: 20px;
+        color: #fff;
+      }
+      .footer-content {
+        /* border-top: 10x solid whitesmoke; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-content h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+      }
+      .footer-content p {
+        max-width: 800px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+      }
+      .socials {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 0rem 0;
+      }
+      .socials li {
+        margin: 0 10px;
+      }
+      .socials a {
+        text-decoration: none;
+        color: #fff;
+      }
+      .socials a i {
+        font-size: 1.5rem;
+        transition: color 0.4s ease;
+      }
+      .socials a:hover i {
+        color: aqua;
+      }
+
+      .footer-bottom {
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        /* width: 100vw; */
+        padding: 20px 0;
+        text-align: center;
+      }
+      .footer-bottom p {
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background: #2c3e50;
+      background: -webkit-linear-gradient(to right, #fd746c, #2c3e50);
+      background: linear-gradient(to right, #fd746c, #2c3e50);
+    "
+  >
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light backgr">
+        <div class="container-fluid">
+          <img
+            class="navlogo"
+            src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/stethoscope.png"
+          />
+          <a class="navbar-brand" href="#">Disease Predictions</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a
+                class="nav-link active"
+                id="backg"
+                aria-current="page"
+                href="{{ url_for('home') }}"
+                >Home</a
+              >
+              <a class="nav-link" href="#" id="backg">Contact Us</a>
+              <a class="nav-link" href="#" id="backg">About</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- --------------------MAIN CLASS--------------------------------- -->
+
+    <main>
+      <div class="contain">
+        <!-- ............Left of Form.................. -->
+
+        <div class="left">
+          <div class="imag">The Description About Input Values</div>
+          <div class="descript">
+            <ol>
+              <li>Age: age in years</li>
+              <li>
+                Chest pain: chest pain type
+                <ol>
+                  <li>value 0: typical angina</li>
+                  <li>value 1: atypical angina</li>
+                  <li>value 2: non-anginal pain</li>
+                  <li>value 3: asymptomatic</li>
+                </ol>
+              </li>
+              <li>trestbps: resting blood pressure in mm Hg</li>
+              <li>Cholestoral: serum cholestoral in mg/dl</li>
+              <li>Thalach: maximum heart rate achieved</li>
+              <li>
+                Slope: the slope of the peak exercise ST segment
+                <ol>
+                  <li>value 0: upsloping</li>
+                  <li>value 1: flat</li>
+                  <li>value 2: downsloping</li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- ----------------Right of Form----------------- -->
+
+        <div class="right">
+          <div class="container">
+            <div class="title">Heart Disease Prediction</div>
+            <div class="content">
+              <form action="/prediction1" method="POST">
+                <div class="user-details">
+                  <div class="input-box">
+                    <span class="details">Age</span>
+                    <input
+                      type="number"
+                      name="age"
+                      placeholder="Enter your age"
+                      required
+                    />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Chest Pain</span>
+                    <input
+                      type="number"
+                      name="cp"
+                      placeholder="Enter your Chest Pain Type"
+                      required
+                    />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">TrestBPS</span>
+                    <input
+                      type="number"
+                      name="tbps"
+                      placeholder="Enter your trestbps"
+                      required
+                    />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Cholestoral</span>
+                    <input
+                      type="number"
+                      name="chol"
+                      placeholder="Enter your chol.(mg/dl)"
+                      required
+                    />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Thalach</span>
+                    <input
+                      type="number"
+                      name="thal"
+                      placeholder="Enter your thalach"
+                      required
+                    />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Slope</span>
+                    <input
+                      type="number"
+                      name="slope"
+                      placeholder="Enter your Slope"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="button">
+                  <input type="submit" value="Predict" />
+                </div>
+              </form>
+              <div class="result"><p>{{predi}}</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- -----------------------FOOTER CLASS--------------------------- -->
+
+    <footer>
+      <div class="footer-content">
+        <h3>Diseases Predictions Using Machine Learning</h3>
+        <p>
+          Thank you for using our ML disease prediction website. Please note
+          that the information provided on this site is not intended to replace
+          medical advice, diagnosis, or treatment. Our goal is to provide you
+          with the most accurate and reliable predictions based on the latest
+          data and research available.
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy;2023</p>
+      </div>
+    </footer>
+  </body>
+</html>

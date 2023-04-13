@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Our Website will predict different diseases state on your given inputs."
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/stethoscope.png" type="image/x-icon">
+    <title>ML Diseases Prediction Website</title>
+    <style>
+      * {
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        background-color: rgba(231, 192, 192, 0.5);
+      }
+
+      /* navigation bar....................................... */
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 3px 20px 2px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.4s, -webkit-box-shadow 0.8s;
+        /* width: 100vw; */
+      }
+      .backgr {
+        /* background-color: rgb(0, 0, 0); */
+        background: linear-gradient(to right, #000428, #004e92);
+        color: rgb(255, 255, 255);
+      }
+
+      #navbarNavAltMarkup {
+        justify-content: flex-end;
+      }
+
+      .navbar-brand {
+        color: rgb(255, 255, 255) !important;
+        font-size: 18px !important;
+      }
+
+      #backg {
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        font-size: 16px;
+        padding: 5px 20px;
+        margin: 5px 7px;
+        border-radius: 25px;
+        border-width: 5px;
+      }
+
+      #backg:hover {
+        background-color: rgb(42, 88, 139);
+        color: rgb(255, 255, 255);
+      }
+      .navlogo{
+        width: 30px;
+        filter: invert(100%);
+        margin: auto 10px;
+      }
+
+      /* main Area........................................... */
+
+      .container {
+        margin: 20px auto;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        /* height: 100vw; */
+        /* width: 100vw; */
+        /* border: 1px solid black ; */
+        flex-wrap: wrap;
+      }
+      .full_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 450px;
+        /* border: 1px solid rgb(228, 167, 167); */
+        border-radius: 15px;
+        margin: 15px auto;
+        background-color: rgb(253, 250, 250);
+      }
+      .full_card:hover {
+        box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.4s, -webkit-box-shadow 0.8s;
+      }
+      .cardss {
+        /* position: relative; */
+        height: 280px;
+        width: 420px;
+        /* border: 1px solid black; */
+        margin: 15px auto;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .cardss:hover {
+        box-shadow: 0 0px 15px 2px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.4s, -webkit-box-shadow 0.8s;
+      }
+      .bg1 {
+        background-image: url(https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/w.jpg);
+      }
+      .bg2 {
+        background-image: url(https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/heart.jpg);
+      }
+      .bg3 {
+        background-image: url(https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/ezgif.com-gif-maker.jpg);
+      }
+      .bg4 {
+        background-image: url(https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/BMIChart.jpg);
+      }
+
+      .size {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        transition: all 1s;
+      }
+
+      .bg1:hover {
+        transform: scale(1.1);
+      }
+      .bg2:hover {
+        transform: scale(1.1);
+      }
+      .bg3:hover {
+        transform: scale(1.1);
+      }
+      .bg4:hover {
+        transform: scale(1.1);
+      }
+
+      .content {
+        padding: 0px 15px;
+        float: right;
+        width: 420px;
+        overflow: hidden;
+        text-align: justify;
+      }
+      .content p {
+        color: rgb(1, 10, 22);
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .btton {
+        padding: 9px 2px;
+        width: 400px;
+        margin-bottom: 15px;
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 44%,
+          rgba(196, 91, 26, 1) 80%
+        );
+      }
+
+      @media only screen and (max-width:488px){
+        .full_card {
+          width: 98%;
+        }
+        .cardss {
+          width: 95%;
+          margin-top: 10px;
+        }
+        .content {
+          width: 95%;
+        }
+        .btton {
+          width: 90%;
+        }
+        .footer-content {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      /* Footer Part................................ */
+
+      footer {
+        position: relative;
+        bottom: 0px;
+        /* left: 0px;
+    right: 0px; */
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        height: auto;
+        /* width: 100vw; */
+        padding-top: 20px;
+        color: #fff;
+      }
+      .footer-content {
+        /* border-top: 10x solid whitesmoke; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-content h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+      }
+      .footer-content p {
+        max-width: 800px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+      }
+      .socials {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 0rem 0;
+      }
+      .socials li {
+        margin: 0 10px;
+      }
+      .socials a {
+        text-decoration: none;
+        color: #fff;
+      }
+      .socials a i {
+        font-size: 1.5rem;
+        transition: color 0.4s ease;
+      }
+      .socials a:hover i {
+        color: aqua;
+      }
+
+      .footer-bottom {
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        /* width: 100vw; */
+        padding: 20px 0;
+        text-align: center;
+      }
+      .footer-bottom p {
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background: #2c3e50;
+      background: -webkit-linear-gradient(to right, #fd746c, #2c3e50);
+      background: linear-gradient(to right, #fd746c, #2c3e50);
+    "
+  >
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light backgr">
+        <div class="container-fluid">
+          <img class="navlogo" src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/stethoscope.png">
+          <a class="navbar-brand" href="#">DISEASE PREDICTION</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a
+                class="nav-link active"
+                id="backg"
+                aria-current="page"
+                href="{{ url_for('home') }}"
+                >Home</a
+              >
+              <a class="nav-link" href="#" id="backg">Contact Us</a>
+              <a class="nav-link" href="#" id="backg">About</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+<!-- ------------------------------------ MAIN ----------------------------------------------------- -->
+
+    <main>
+      <div class="container">
+        <div class="full_card">
+          <div class="cardss">
+            <div class="bg1 size"></div>
+            <!-- Images -->
+          </div>
+          <div class="content">
+            <p>
+              Diabetes is a disease that occurs when your blood glucose, also
+              called blood sugar, is too high. Click the button below to predict
+              either you are diabetic or not by filling some attributes. The
+              model is trained to give accuracy of more than 80%.
+            </p>
+          </div>
+          <button class="btton" onclick="location.href='/handle-click'">
+            Predict
+          </button>
+        </div>
+
+        <div class="full_card">
+          <div class="cardss">
+            <div class="bg2 size"></div>
+          </div>
+          <div class="content">
+            <p>
+              Heart disease affects the blood vessels of body. It may be
+              increased by smoking, high blood pressure, high cholesterol,
+              unhealthy diet, lack of exercise, and obesity. Click the button
+              below to predict your heart disease. The model is trained to give
+              accuracy of about 99%.
+            </p>
+          </div>
+          <button class="btton" class="btton" onclick="location.href='/handle-click1'">Predict</button>
+        </div>
+        <div class="full_card">
+          <div class="cardss">
+            <div class="bg3 size"></div>
+          </div>
+          <div class="content">
+            <p>
+              Parkinson disease is a brain disorder that causes unintended
+              movements, such as shaking, stiffness, difficulty with balance and
+              coordination, mental and behavioral changes, sleep problems,
+              depression, memory difficulties, and fatigue. Click the button
+              below to predict your parkinson disease. The model is trained to
+              give accuracy of more than 93%.
+            </p>
+          </div>
+          <button class="btton" class="btton" onclick="location.href='/handle-click2'">Predict</button>
+        </div>
+        <div class="full_card">
+          <div class="cardss">
+            <div class="bg4 size"></div>
+          </div>
+          <div class="content">
+            <p>
+              BMI is a simple and useful tool that measures body fat based on height and weight. By using our BMI calculator, you can determine your BMI and find out if you are underweight, normal weight, overweight, or obese. This information can help you make informed decisions about your health and well-being. So, let's get started and calculate your BMI!
+            </p>
+          </div>
+          <button class="btton" class="btton" onclick="location.href='/handle-click3'">Calculate</button>
+        </div>
+      </div>
+    </main>
+
+<!-- --------------------------------------- FOOTER --------------------------------------------------------- -->
+
+    <footer>
+      <div class="footer-content">
+        <h3>Diseases Predictions Using Machine Learning</h3>
+        <p>
+          Thank you for using our ML disease prediction website. Please note that the information provided on this site is not intended to replace medical advice, diagnosis, or treatment. Our goal is to provide you with the most accurate and reliable predictions based on the latest data and research available.
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy;2023</p>
+      </div>
+    </footer>
+  </body>
+</html>
