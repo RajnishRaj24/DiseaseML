@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/stethoscope.png"
+      type="image/x-icon"
+    />
+    <title>Contact Us</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif, Arial, Helvetica;
+      }
+
+      #bodys {
+        background: linear-gradient(90deg, rgba(233, 221, 57, 0.855) 50%, rgba(137, 24, 223, 0.849) 50%);
+      }
+
+      /* .................navigation bar............. */
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 3px 20px 2px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.4s, -webkit-box-shadow 0.8s;
+        /* width: 100vw; */
+      }
+
+      .backgr {
+        background: linear-gradient(to right, #000428, #004e92);
+        color: rgb(255, 255, 255);
+      }
+
+      #navbarNavAltMarkup {
+        justify-content: flex-end;
+      }
+
+      .navbar-brand {
+        color: rgb(255, 255, 255) !important;
+      }
+
+      #backg {
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        font-size: 16px;
+        padding: 5px 20px;
+        margin: 5px 7px;
+        border-radius: 25px;
+        border-width: 5px;
+      }
+
+      #backg:hover {
+        background-color: rgb(42, 88, 139);
+        color: rgb(255, 255, 255);
+      }
+
+      .navlogo {
+        width: 30px;
+        filter: invert(100%);
+        margin: auto 10px;
+      }
+
+      /* --------------main-------------------- */
+
+      .contain {
+        width: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 530px;
+        margin: 40px auto;
+        position: relative;
+        /* border: 1px solid red; */
+        padding: 40px auto;
+        
+      }
+
+      .contain .left {
+        height: 85%;
+        width: 310px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        left: 0px;
+        z-index: 2;
+        background-color: #7a2bc0;
+        box-shadow: 5px 10px 20px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .contain .left span {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-align: center;
+        color: #fff;
+        flex-shrink:0;
+      }
+
+      .contain .left .contents span{
+        font-size: 14px;
+        font-weight: 400;
+        position: absolute;
+        top: 80px;
+        left: 12px;
+        text-align: justify;
+        line-height: 25px;
+        margin: 1px auto;
+        letter-spacing: 0;
+        width: 90%;
+      }
+
+      .contain .left .media {
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 0rem 0;
+      }
+      .contain .left .media li {
+        margin: 0 10px;
+      }
+
+      .contain .left .media li img {
+        filter: invert(1);
+        cursor: pointer;
+        max-height: 20px;
+        max-width: 20px;
+      }
+
+      .contain .left .media li img:hover {
+        filter: invert(0.5);
+      }
+
+      .contain .right {
+        height: 100%;
+        flex-shrink: 1;
+        position: absolute;
+        right: 0;
+        width: 85%;
+        background-color: #fff;
+        padding-left: 22%;
+        padding-top: 70px;
+        padding-bottom: 70px;
+        padding-right: 50px;
+        box-shadow: 1px 3px 20px 2px rgba(0, 0, 0, 0.08);
+      }
+
+      .contain .right h2 {
+        color: #781796;
+        font-size: 25px;
+        font-weight: 500;
+      }
+
+      .contain .right .formbox {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 30px;
+      }
+
+      .contain .right .formbox .inputbox {
+        position: relative;
+        margin-bottom: 35px;
+      }
+
+      .contain .right .formbox .inputbox.w50 {
+        width: 47%;
+      }
+      .contain .right .formbox .inputbox.w100 {
+        width: 100%;
+      }
+
+      .contain .right .formbox .inputbox input,
+      .contain .right .formbox .inputbox textarea {
+        width: 100%;
+        resize: none;
+        padding: 5px 0;
+        outline: none;
+        border: none;
+        font-size: 18px;
+        font-weight: 300;
+        color: #333;
+        border-bottom: 1px solid #777;
+      }
+
+      .contain .right .formbox .inputbox textarea {
+        height: 120px;
+      }
+
+      .contain .right .formbox .inputbox span {
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        font-size: 18px;
+        font-weight: 300;
+        pointer-events: none;
+        transition: 0.3s;
+      }
+
+      .contain .right .formbox .inputbox input:focus ~ span,
+      .contain .right .formbox .inputbox input:valid ~ span,
+      .contain .right .formbox .inputbox textarea:focus ~ span,
+      .contain .right .formbox .inputbox textarea:valid ~ span {
+        transform: translateY(-20px);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: #781796;
+      }
+      .contain .right .formbox .inputbox input[type="submit"] {
+        position: relative;
+        max-width: 150px;
+        border: none;
+        color: #fff;
+        background: linear-gradient(
+          31deg,
+          rgba(139, 44, 210, 1) 43%,
+          rgba(27, 136, 207, 1) 93%
+        );
+        padding: 12px;
+        font-weight: 500;
+      }
+      .contain .right .formbox .inputbox input[type="submit"]:hover {
+        background: linear-gradient(
+          -31deg,
+          rgba(139, 44, 210, 1) 43%,
+          rgba(27, 136, 207, 1) 93%
+        );
+      }
+
+      .contain
+        .right
+        .formbox
+        .inputbox
+        input[type="number"]::-webkit-outer-spin-button,
+      .contain
+        .right
+        .formbox
+        .inputbox
+        input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      @media only screen and (max-width:1190px) {
+        .contain .right {
+          padding-left: 25%;
+        }
+      }
+      @media only screen and (max-width:1085px) {
+        .contain .right {
+          padding-left: 30%;
+        }
+      }
+      @media only screen and (max-width:965px) {
+        .contain {
+          min-height: 780px;
+          border: 1px solid red;
+        }
+        .contain .left {
+          top: 0;
+          width: 100%;
+          height: 260px;
+          box-shadow: none;
+        }
+        .contain .right {
+          /* bottom: 0; */
+          padding-left: 8%;
+          padding-top: 30px;
+          width: 100%;
+          top: 260px;
+          height: calc(780px - 260px);
+        }
+        .contain .left .media {
+          right: 0;
+          justify-content: flex-end;
+          margin-right: 5%;
+        }
+      }
+
+      @media only screen and (max-width:615px) {
+        .contain {
+          height: 930px;
+          width: 95%;
+        }
+        .contain .left {
+          height: 290px;
+        }
+        .contain .left .media {
+          bottom: 20px;
+        }
+        .contain .right {
+          top: 290px;
+          height: calc(930px - 290px);
+        }
+        .contain .right .formbox .inputbox.w50 {
+          width: 100%;
+        }
+      }
+      @media only screen and (max-width:450px) {
+        .contain .left {
+          height: 300px;
+        }
+        .contain .left span {
+          font-size: 25px;
+        }
+        .contain .left .contents span {
+          font-size: 13px;
+          top: 70px;
+        }
+      }
+
+      /* --------------footer------------------ */
+
+      footer {
+        position: relative;
+        bottom: 0px;
+        /* left: 0px;
+    right: 0px; */
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        height: auto;
+        /* width: 100vw; */
+        padding-top: 20px;
+        color: #fff;
+      }
+
+      .footer-content {
+        /* border-top: 10x solid whitesmoke; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-content h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+      }
+
+      .footer-content p {
+        max-width: 500px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+      }
+
+      .socials {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 0rem 0;
+      }
+
+      .socials li {
+        margin: 0 10px;
+      }
+
+      .socials a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .socials a i {
+        font-size: 1.5rem;
+        transition: color 0.4s ease;
+      }
+
+      .socials a:hover i {
+        color: aqua;
+      }
+
+      .footer-bottom {
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        /* width: 100vw; */
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .footer-bottom p {
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body id="bodys">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light backgr">
+        <div class="container-fluid">
+          <img
+            class="navlogo"
+            src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/stethoscope.png"
+          />
+          <a class="navbar-brand" href="#">Disease Predictions</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a
+                class="nav-link active"
+                id="backg"
+                aria-current="page"
+                href="{{ url_for('home') }}"
+                >Home</a
+              >
+              <a class="nav-link" href="#" id="backg">Contact Us</a>
+              <a class="nav-link" href="#" id="backg">About</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- -------------------MAIN----------------------- -->
+
+    <main>
+      <div class="contain">
+        <div class="left">
+          <span>Contact Us</span>
+          <div class="contents">
+            <span>If you have any questions, concerns, or feedback, we encourage you to reach out to us using the information provided on our Contact Us page. We are dedicated to provide excellent customer service and we will do our best to respond to your message as quickly as possible.</span>
+          </div>
+          <ol class="media">
+            <li class="iconss">
+              <img
+                src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/logos/1.png"
+              />
+            </li>
+            <li class="iconss">
+              <img
+                src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/logos/2.png"
+              />
+            </li>
+            <li class="iconss">
+              <img
+                src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/logos/3.png"
+              />
+            </li>
+            <li class="iconss">
+              <img
+                src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/logos/5.png"
+              />
+            </li>
+            <li class="iconss">
+              <img
+                src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/logos/4.png"
+              />
+            </li>
+          </ol>
+        </div>
+        <div class="right">
+          <h2>Send a Message</h2>
+          <div class="formbox">
+            <div class="inputbox w50">
+              <input type="text" required />
+              <span>First Name</span>
+            </div>
+            <div class="inputbox w50">
+              <input type="text" required />
+              <span>Last Name</span>
+            </div>
+            <div class="inputbox w50">
+              <input type="email" required />
+              <span>Email Address</span>
+            </div>
+            <div class="inputbox w50">
+              <input type="number" required />
+              <span>Mobile Number</span>
+            </div>
+            <div class="inputbox w100">
+              <textarea required></textarea>
+              <span>Write your message here...</span>
+            </div>
+            <div class="inputbox w100">
+              <input type="submit" value="Send" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <h3>Diseases Predictions Using Machine Learning</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sed
+          deleniti repellat temporibus non nihil a quasi nisi quae culpa
+          excepturi voluptates vitae magnam, fuga incidunt libero esse dolores
+          odit.
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy;2023</p>
+      </div>
+    </footer>
+  </body>
+</html>
