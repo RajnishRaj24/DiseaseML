@@ -56,6 +56,10 @@ def bmi_page():
 def handle_click3():
     return redirect('/body-mass-index-calculator-page')
 
+@app.route('/contact-us-page')
+def contact():
+    return render_template('contactus.html')
+
 # ---------------------- Diabetes Predictions ---------------------------
 
 
