@@ -389,9 +389,12 @@
 </head>
 
 <body style="
-      background: #2c3e50;
-      background: -webkit-linear-gradient(to right, #fd746c, #2c3e50);
-      background: linear-gradient(to right, #fd746c, #2c3e50);
+      background: rgb(139, 44, 210);
+      background: linear-gradient(
+        31deg,
+        rgba(139, 44, 210, 1) 43%,
+        rgba(27, 136, 207, 1) 93%
+      );
     ">
   <header>
     <nav class="navbar navbar-expand-lg navbar-light backgr">
@@ -405,7 +408,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link active" id="backg" aria-current="page" href="{{ url_for('home') }}">Home</a>
-            <a class="nav-link" href="#" id="backg">Contact Us</a>
+            <a class="nav-link" href="{{ url_for('contact') }}" id="backg">Contact Us</a>
             <a class="nav-link" href="#" id="backg">About</a>
           </div>
         </div>
