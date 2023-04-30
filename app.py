@@ -60,6 +60,10 @@ def handle_click3():
 def contact():
     return render_template('contactus.html')
 
+@app.route('/About-us-page')
+def about():
+    return render_template('aboutUs.html')
+
 # ---------------------- Diabetes Predictions ---------------------------
 
 
