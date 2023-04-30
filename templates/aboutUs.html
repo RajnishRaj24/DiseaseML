@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/stethoscope.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>About Us</title>
+    <link rel="stylesheet" href="aboutus.css" />
+    <style>
+      * {
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        background-color: rgba(231, 192, 192, 0.5);
+      }
+
+      /* navigation bar....................................... */
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 3px 20px 2px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.4s, -webkit-box-shadow 0.8s;
+        /* width: 100vw; */
+      }
+      .backgr {
+        /* background-color: rgb(0, 0, 0); */
+        background: linear-gradient(to right, #000428, #004e92);
+        color: rgb(255, 255, 255);
+      }
+
+      #navbarNavAltMarkup {
+        justify-content: flex-end;
+      }
+
+      .navbar-brand {
+        color: rgb(255, 255, 255) !important;
+        font-size: 18px !important;
+      }
+
+      #backg {
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        font-size: 16px;
+        padding: 5px 20px;
+        margin: 5px 7px;
+        border-radius: 25px;
+        border-width: 5px;
+      }
+
+      #backg:hover {
+        background-color: rgb(42, 88, 139);
+        color: rgb(255, 255, 255);
+      }
+      .navlogo {
+        width: 30px;
+        filter: invert(100%);
+        margin: auto 10px;
+      }
+
+      /* ................Main.................... */
+      #bodyb {
+        background: url("Daco_4529049.png");
+      }
+      .contain {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row;
+        margin: 20px 15px;
+      }
+
+      .contain .left {
+        padding-left: 5%;
+        padding-top: 5%;
+        width: 45%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .contain .left .about {
+        font-family: Helvetica, sans-serif;
+        font-size: 5rem;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: #004e92;
+      }
+      .contain .left .contents #more {
+        display: none;
+      }
+      .contain .left .contents {
+        font-size: 1rem;
+        font-weight: 300;
+        color: #004e92;
+        margin-bottom: 20px;
+      }
+      .contain .left .contents a {
+        text-decoration: none;
+        font-size: 1.1rem;
+        color: #004e92;
+        font-weight: 400;
+      }
+      .contain .left .contents .bttn {
+        margin: 20px 0px;
+        font-size: 1.2rem;
+        padding: 5px 10px;
+        font-weight: 500;
+        color: #fff;
+        background-color: #004e92;
+        border: none;
+        border-radius: 5px;
+      }
+      .contain .left .contents .bttn:hover {
+        color: #004e92;
+        background-color: #88bae9;
+      }
+      .contain .right {
+        width: 50%;
+      }
+      .contain .right img {
+        width: 100%;
+        position: relative;
+        top: -50px;
+        opacity: 0.9;
+      }
+
+      @media only screen and (max-width: 1000px) {
+        .contain {
+          justify-content: center;
+        }
+        .contain .left {
+          position: absolute;
+          width: 70%;
+          z-index: 5;
+        }
+        .contain .right {
+          width: 80%;
+          height: 30%;
+          z-index: 1;
+        }
+        .contain .right img {
+          opacity: 0;
+        }
+        .contain .left .contents {
+          font-size: 19px;
+          color: #004e92;
+        }
+        .contain .left .contents .bttn {
+          font-size: 20px;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        .contain .right {
+          width: 100%;
+        }
+        .contain .left {
+          width: 90%;
+        }
+      }
+
+      @media only screen and (max-width: 545px) {
+        .contain {
+          height: 90vh;
+        }
+        .contain .left .about {
+          font-size: 50px;
+        }
+      }
+
+      /* ------------footer---------------------- */
+
+      footer {
+        position: relative;
+        bottom: 0px;
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        height: auto;
+        padding-top: 20px;
+        color: #fff;
+      }
+      .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        margin: 0px 10px;
+      }
+      .footer-content h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+      }
+      .footer-content p {
+        max-width: 800px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+      }
+      .socials {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 0rem 0;
+      }
+      .socials li {
+        margin: 0 10px;
+      }
+      .socials a {
+        text-decoration: none;
+        color: #fff;
+      }
+      .socials a i {
+        font-size: 1.5rem;
+        transition: color 0.4s ease;
+      }
+      .socials a:hover i {
+        color: aqua;
+      }
+
+      .footer-bottom {
+        background: linear-gradient(
+          90deg,
+          rgba(20, 125, 116, 1) 0%,
+          rgba(122, 53, 158, 1) 54%,
+          rgba(196, 91, 26, 1) 100%
+        );
+        padding: 20px 0;
+        text-align: center;
+      }
+      .footer-bottom p {
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+      }
+    </style>
+    <script>
+      function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+        } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+        }
+      }
+    </script>
+  </head>
+  <body id="bodyb">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light backgr">
+        <div class="container-fluid">
+          <img
+            class="navlogo"
+            src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/stethoscope.png"
+          />
+          <a class="navbar-brand" href="#">DISEASEAI</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a
+                class="nav-link active"
+                id="backg"
+                aria-current="page"
+                href="{{ url_for('home') }}"
+                >Home</a
+              >
+              <a class="nav-link" href="{{ url_for('contact') }}" id="backg"
+                >Contact Us</a
+              >
+              <a class="nav-link" href="#" id="backg">About</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="contain">
+        <div class="left">
+          <div class="about">
+            <p>About Us</p>
+          </div>
+          <div class="contents">
+            <p>
+              Welcome to diseaseai! We have developed a platform to predict
+              whether a person has diabetes, Parkinson's disease, or heart
+              disease based on specific inputs. Our platform uses
+              state-of-the-art machine learning algorithms to analyze large
+              datasets of medical records and health data, allowing us to
+              identify patterns and make accurate predictions about an
+              individual's health. Our goal is to provide people with actionable
+              insights that can help them make informed decisions about
+              <span id="dots">......</span
+              ><span id="more">
+                their health and wellbeing.<br />
+                At diseaseai, we are committed to using the latest technology
+                and techniques to improve the accuracy and reliability of our
+                predictions. We understand the importance of privacy and
+                security when it comes to personal health information, which is
+                why we take every precaution to protect the data we collect.<br />
+                If you have any questions about our platform or want to learn
+                more about our work, please don't hesitate to
+                <a href="{{ url_for('contact') }}">contact us</a>. We are always
+                happy to hear from our users and welcome feedback and
+                suggestions for how we can improve our services. Thank you for
+                choosing diseaseai and we look forward to helping you stay
+                healthy and informed.
+              </span>
+            </p>
+            <button onclick="myFunction()" id="myBtn" class="bttn">
+              Read more
+            </button>
+          </div>
+        </div>
+        <div class="right">
+          <img
+            src="https://raw.githubusercontent.com/RahulSingh693/ML_Photos/main/%E2%80%94Pngtree%E2%80%94web%20development%20illustration%20modern_4461019.png"
+            alt="about image"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <h3>Diseases Predictions Using Machine Learning</h3>
+        <p>
+          Thank you for using our ML disease prediction website. Please note
+          that the information provided on this site is not intended to replace
+          medical advice, diagnosis, or treatment. Our goal is to provide you
+          with the most accurate and reliable predictions based on the latest
+          data and research available.
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy;2023</p>
+      </div>
+    </footer>
+  </body>
+</html>
