@@ -500,31 +500,35 @@
         </div>
         <div class="right">
           <h2>Send a Message</h2>
-          <div class="formbox">
-            <div class="inputbox w50">
-              <input type="text" required />
-              <span>First Name</span>
+          <form action="https://formsubmit.co/89f8367095e4ac752cdcdc30f8f2587c" method="POST">
+            <div class="formbox">
+              <div class="inputbox w50">
+                <input type="text" name="First name"  required />
+                <span>First Name</span>
+              </div>
+              <div class="inputbox w50">
+                <input type="text" name="Last name" required />
+                <span>Last Name</span>
+              </div>
+              <div class="inputbox w50">
+                <input type="email" name="email address" required />
+                <span>Email Address</span>
+              </div>
+              <div class="inputbox w50">
+                <input type="number" name="mobile number" required />
+                <span>Mobile Number</span>
+              </div>
+              <div class="inputbox w100">
+                <textarea name="Message" required></textarea>
+                <span>Write your message here...</span>
+              </div>
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://diseaseai.onrender.com/contact-us-page">
+              <div class="inputbox w100">
+                <input type="submit" value="Send" />
+              </div>
             </div>
-            <div class="inputbox w50">
-              <input type="text" required />
-              <span>Last Name</span>
-            </div>
-            <div class="inputbox w50">
-              <input type="email" required />
-              <span>Email Address</span>
-            </div>
-            <div class="inputbox w50">
-              <input type="number" required />
-              <span>Mobile Number</span>
-            </div>
-            <div class="inputbox w100">
-              <textarea required></textarea>
-              <span>Write your message here...</span>
-            </div>
-            <div class="inputbox w100">
-              <input type="submit" value="Send" />
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </main>
